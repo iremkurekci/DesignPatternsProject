@@ -1,5 +1,5 @@
 # DesignPatternsProject
-##This project is written with C#.##
+## This project is written with C#.
 In this project I used Composite, Observer and MVC Design Patterns. 
 This project is a simple online shopping program.
 If you want, you can create products, packages which contain these products or boxes which contain these packages and products.
