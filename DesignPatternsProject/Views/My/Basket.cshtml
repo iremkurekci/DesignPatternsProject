@@ -1,0 +1,92 @@
+﻿@model IEnumerable<DesignPatternsProject.Models.ProductViewModel>
+
+@{
+    ViewData["Title"] = "Basket";
+}
+
+<h1>My Basket</h1>
+<br />
+<h2>
+    List Items:
+    <br />
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th align="center">
+                    Name
+                </th>
+                <th align="center">
+                    Including Product Piece
+                </th>
+                <th align="center">
+                    Unit Price
+                </th>
+                <th align="center">
+                    Stock 
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td align="center">
+                        x @Html.DisplayFor(modelItem => item.Piece)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => item.UnitPrice) $
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => item.stock) /10
+
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</h2>
+<hr />
+<h2>Total Price: @ViewBag.totalPrice $</h2>
+<br />
+<h3>@ViewBag.warning</h3>
+<br />
+<div class="jumbotron" style="color:red"><h1 style="display:inline">!</h1><b style="display: inline">@ViewBag.isstock</b></div>
+
+<style>
+    .table {
+        width: 35%;
+    }
+    body {
+        background: #bcb8b1;
+    }
+    h1 {
+        color: #463f3a;
+    }
+    h2 {
+        color: #a4243b;
+    }
+    h3 {
+        color: #5d2e46;
+    }
+    th {
+        color: #463f3a;
+    }
+    td {
+        color: #a4243b;
+    }
+    b{
+        color: red;
+    }
+    .jumbotron {
+        border-radius: 40px;
+        background: #ccd5ae;
+        opacity:0.8;
+        padding: 20px;
+        display:inline-block;
+    }
+</style>
